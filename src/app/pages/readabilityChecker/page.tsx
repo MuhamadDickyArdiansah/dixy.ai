@@ -9,9 +9,11 @@ export default function ReadabilityCheckerPage() {
   const [text, setText] = useState("");
   const [readabilityScore, setReadabilityScore] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleCheckReadability = async (e) => {
+  const handleCheckReadability = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
@@ -33,8 +35,14 @@ export default function ReadabilityCheckerPage() {
       setReadabilityScore(data.readabilityScore);
 
       console.log("Data Readability:", data);
-    } catch (err) {
-      setError(err.message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        // Now that TypeScript knows err is an instance of Error, we can access message
+        setError(err.message);
+      } else {
+        // If it's not an instance of Error, handle it as a generic unknown error
+        setError("An unknown error occurred.");
+      }
     } finally {
       setIsLoading(false);
     }

@@ -6,21 +6,23 @@ import { useState, useRef, useEffect } from "react";
 import {
   User,
   Box,
-  AArrowDown,
   SendHorizonal,
   Loader,
   Sparkles,
   ArrowDown,
   Copy,
   Check,
-  Eraser,
 } from "lucide-react";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-// --- LANGKAH 2: Definisikan komponen CodeBlock di sini ---
-function CodeBlock({ language, code }) {
+interface CodeBlockProps {
+  language: string;
+  code: string;
+}
+
+function CodeBlock({ language, code }: CodeBlockProps) {
   const [isCopied, setIsCopied] = useState(false);
 
   const handleCopy = () => {
@@ -67,7 +69,7 @@ function CodeBlock({ language, code }) {
 }
 
 // --- LANGKAH 3: Definisikan fungsi renderMessageContent di sini ---
-function renderMessageContent(content) {
+function renderMessageContent(content: string) {
   const codeBlockRegex = /```(\w+)?\n([\s\S]*?)```/g;
   const parts = [];
   let lastIndex = 0;
@@ -113,8 +115,8 @@ export default function AiChatPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(true);
 
-  const scrollContainerRef = useRef(null);
-  const messagesEndRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -184,14 +186,15 @@ export default function AiChatPage() {
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      if (!isLoading && input.trim()) {
-        handleSubmit(e);
-      }
+      console.log("Message sent:", input);
+      setInput(""); // Clear the input
     }
   };
+
+  const divRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div className="flex flex-col pt-14 h-[calc(100vh-10px)] bg-gray-50">

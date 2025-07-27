@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import ProductCard from "@/components/layout/productCard";
 import { Sparkles, FileText, ScanLine, Workflow } from "lucide-react";
+import Footer from "@/components/layout/footer";
 
 const features = [
   {
@@ -227,6 +228,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

@@ -7,12 +7,14 @@ import { Sparkles, Wand2 } from "lucide-react";
 
 export default function ProductNameGenerator() {
   const [category, setCategory] = useState("");
-  const [keywords, setKeywords] = useState("");
+  const [keywords, setKeywords] = useState<string>("");
   const [generatedNames, setGeneratedNames] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
-  const handleGenerate = async (e) => {
+  const [error, setError] = useState<string | null>(null); // Accepts both string or null
+
+  const handleGenerate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
@@ -32,8 +34,14 @@ export default function ProductNameGenerator() {
 
       const data = await response.json();
       setGeneratedNames(data.names);
-    } catch (err) {
-      setError(err.message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        // Now that TypeScript knows err is an instance of Error, we can access message
+        setError(err.message);
+      } else {
+        // If it's not an instance of Error, handle it as a generic unknown error
+        setError("An unknown error occurred.");
+      }
     } finally {
       setIsLoading(false);
     }
