@@ -74,7 +74,7 @@ export default function ProductNameGenerator() {
                 id="category"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="e.g. Minuman, Skincare, Pakaian"
                 required
               />
@@ -90,7 +90,7 @@ export default function ProductNameGenerator() {
                 id="keywords"
                 value={keywords}
                 onChange={(e) => setKeywords(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 rows={3}
                 placeholder="e.g. Segar, boba, manis, organik, untuk anak"
                 required
@@ -99,7 +99,7 @@ export default function ProductNameGenerator() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300"
+              className="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300"
             >
               {isLoading ? (
                 <svg
@@ -149,7 +149,7 @@ export default function ProductNameGenerator() {
                 {generatedNames.map((name, index) => (
                   <div
                     key={index}
-                    className="bg-blue-50 text-blue-800 p-4 rounded-lg text-center font-semibold text-lg hover:bg-blue-100 cursor-pointer transition"
+                    className="bg-indigo-50 text-indigo-800 p-4 rounded-lg text-center font-semibold text-lg hover:bg-indigo-100 cursor-pointer transition"
                   >
                     {name}
                   </div>
