@@ -6,12 +6,19 @@ import React from "react";
 import { Textarea, Button, Tooltip } from "@nextui-org/react";
 import { Icon } from "@iconify/react";
 
+interface PromptInputAreaProps {
+  input: string;
+  setInput: React.Dispatch<React.SetStateAction<string>>;
+  isLoading: boolean;
+  handleSubmit: (e: React.FormEvent) => void;
+}
+
 export default function PromptInputArea({
   input,
   setInput,
   isLoading,
   handleSubmit,
-}) {
+}: PromptInputAreaProps) {
   return (
     <div className="w-full max-w-4xl mx-auto">
       {/* --- Main Input Form --- */}
