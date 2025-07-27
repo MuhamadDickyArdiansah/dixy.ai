@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
     // Log output dari AI untuk memeriksa hasilnya
     console.log("AI Output:", output);
 
-    const combinedOutput = output.join("");
+    const combinedOutput = Object.values(output).join("");
 
     if (!output) {
       throw new Error("AI tidak memberikan respons yang valid.");
@@ -43,8 +43,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       readabilityScore: combinedOutput,
     });
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      // Jika error adalah instance dari Error, akses properti message
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    // Jika error bukan instance dari Error, berikan pesan error default
+    return NextResponse.json(
+      { error: "An unknown error occurred" },
+      { status: 500 }
+    );
   }
 }

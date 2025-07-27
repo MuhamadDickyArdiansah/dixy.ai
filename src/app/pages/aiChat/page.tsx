@@ -147,7 +147,7 @@ export default function AiChatPage() {
     return () => container?.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input.trim()) return;
 
@@ -184,7 +184,7 @@ export default function AiChatPage() {
     }
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       if (!isLoading && input.trim()) {

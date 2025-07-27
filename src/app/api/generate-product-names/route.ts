@@ -33,13 +33,20 @@ export async function POST(req: NextRequest) {
     const output = await replicate.run(model, { input });
 
     // Gabungkan output menjadi satu string utuh jika output berupa array
-    const combinedOutput = output.join("");
-
+    const combinedOutput = Object.values(output).join("");
     return NextResponse.json({
       names: combinedOutput.split("\n").filter((name) => name.trim() !== ""), // Mengembalikan daftar nama produk
     });
-  } catch (error) {
-    console.error(error); // Log error jika ada masalah
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      // Jika error adalah instance dari Error, akses properti message
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    // Jika error bukan instance dari Error, berikan pesan error default
+    return NextResponse.json(
+      { error: "An unknown error occurred" },
+      { status: 500 }
+    );
   }
 }
