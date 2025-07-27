@@ -1,10 +1,7 @@
-"use client";
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import Navbar from "@/components/layout/navbar";
-import PageWrapper from "@/components/layout/pageWrapper";
 import { usePathname } from "next/navigation";
 import Footer from "@/components/layout/footer";
 
@@ -37,8 +34,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        {/* {pathname !== "/aiChat" && <PageWrapper>{children}</PageWrapper>} */}
-        {!isAiChatPage && <Footer />}
+        <Footer />
       </body>
     </html>
   );
