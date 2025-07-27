@@ -1,6 +1,54 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Dixy.ai - Your AI Writing Assistant
+
+Dixy.ai adalah alat AI berbasis web yang membantu Anda dalam berbagai tugas terkait teks, seperti menghasilkan nama produk, memeriksa keterbacaan teks, dan berinteraksi dengan asisten AI untuk berbagai kebutuhan kreatif dan teknis. Aplikasi ini dibangun menggunakan Next.js dan React, memberikan pengalaman yang cepat dan responsif untuk pengguna.
+
+## Deskripsi
+
+Dixy.ai menyederhanakan berbagai tugas yang memerlukan kreativitas dan kejelasan, seperti menghasilkan nama produk, menulis teks, dan memeriksa keterbacaan. Aplikasi ini menggunakan model AI yang canggih untuk memberikan saran dan rekomendasi yang relevan berdasarkan permintaan pengguna. Dengan UI yang ramah pengguna, pengguna dapat berinteraksi langsung dengan asisten AI untuk menyelesaikan berbagai tugas.
+
+## Teknologi yang Digunakan
+
+Proyek ini dibangun dengan teknologi terbaru untuk memberikan pengalaman pengguna yang mulus dan cepat:
+
+- **Next.js**: Framework React untuk aplikasi server-side rendering (SSR) dan statis.
+- **React**: Library JavaScript untuk membangun antarmuka pengguna.
+- **Tailwind CSS**: Framework utility-first untuk styling cepat dan responsif.
+- **Lucide React**: Ikon SVG untuk antarmuka yang lebih bersih dan estetis.
+- **Prism.js**: Syntax highlighter untuk kode yang dihasilkan oleh AI.
+- **react-simple-code-editor**: Editor kode untuk menangani kode yang diberikan oleh AI.
+- **Vercel**: Platform hosting untuk aplikasi Next.js dengan dukungan CDN.
+
+## Fitur
+
+- **Chat AI**: Interaksi langsung dengan AI untuk berbagai pertanyaan dan permintaan, mulai dari ide kreatif hingga pertanyaan teknis.
+- **Generasi Nama Produk**: Alat untuk menghasilkan nama produk yang kreatif dan unik berdasarkan preferensi pengguna.
+- **Pemeriksa Keterbacaan**: Memeriksa teks Anda untuk memberikan skor keterbacaan yang lebih baik.
+- **Editor Kode**: Menyediakan editor untuk menampilkan dan mengedit kode yang dihasilkan oleh AI.
+- **Mode Gelap dan Terang**: Pengguna dapat beralih antara mode terang dan gelap untuk kenyamanan mata.
+
+## Setup Instructions
+
+### Prasyarat
+
+Sebelum memulai, pastikan Anda telah menginstal perangkat lunak berikut:
+
+- **Node.js** versi 16.x atau lebih tinggi
+- **npm** atau **yarn**
+
+### Langkah-langkah Instalasi
+
+1. **Clone repositori**:
+
+   ```bash
+   git clone https://github.com/username/dicty-ai.git
+   cd dicty-ai
+   ```
+
+2. **Instal dependensi**:
+
+Jika Anda menggunakan npm:
 
 First, run the development server:
 
@@ -14,24 +62,47 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Menjalankan proyek**:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Untuk menjalankan proyek di mode pengembangan:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+Copy
+npm run dev
+```
 
-## Learn More
+atau
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+Copy
+yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Buka aplikasi di browser melalui http://localhost:3000.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**_Struktur Proyek_**
+Berikut adalah struktur dasar proyek:
 
-## Deploy on Vercel
+```bash
+Copy
+/dicty-ai
+  /pages              # Halaman utama dan lainnya
+    /api              # API endpoint (misalnya, chat dengan AI)
+    /aiChat           # Halaman chat dengan AI
+  /components         # Komponen yang dapat digunakan kembali
+    /layout           # Layout utama seperti Navbar, Footer
+    /chat             # Komponen chat dan input
+  /styles             # CSS dan Tailwind konfigurasi
+  /public             # Gambar, logo, dan aset statis lainnya
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**_AI Support Explanation_**
+Dixy.ai menggunakan model AI canggih yang dilatih untuk memahami konteks dan memberikan respons yang relevan. Berikut adalah beberapa kemampuan utama AI yang digunakan di aplikasi ini:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Generasi Nama Produk: AI dapat menghasilkan nama produk yang kreatif berdasarkan kata kunci atau tema yang diberikan oleh pengguna. Model ini dilatih menggunakan berbagai dataset yang mencakup kata-kata yang populer dan relevansi pasar.
+
+Pemeriksa Keterbacaan: AI dapat menganalisis teks dan memberikan skor keterbacaan menggunakan metrik seperti Flesch Reading Ease atau Flesch-Kincaid Grade Level. AI ini dapat menyarankan perubahan untuk meningkatkan keterbacaan teks dan membuatnya lebih mudah dipahami oleh audiens yang lebih luas.
+
+Chatbot AI: AI dapat menjawab berbagai pertanyaan, mulai dari topik teknis hingga kreatif. Pengguna dapat berinteraksi dengan asisten AI ini secara langsung dan mendapatkan bantuan sesuai kebutuhan.
+
 # dixy.ai
