@@ -49,8 +49,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       reply: combinedOutput,
     });
-  } catch (error: any) {
-    console.error(error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+    // Jika error bukan instance dari Error, menangani dengan aman.
+    console.error("An unknown error occurred");
+    return NextResponse.json(
+      { error: "An unknown error occurred" },
+      { status: 500 }
+    );
   }
 }

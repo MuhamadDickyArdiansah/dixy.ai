@@ -42,13 +42,11 @@ Sebelum memulai, pastikan Anda telah menginstal perangkat lunak berikut:
 1. **Clone repositori**:
 
    ```bash
-   git clone https://github.com/username/dicty-ai.git
-   cd dicty-ai
+   git clone https://github.com/username/Dixy-ai.git
+   cd Dixy-ai
    ```
 
 2. **Instal dependensi**:
-
-Jika Anda menggunakan npm:
 
 First, run the development server:
 
@@ -85,7 +83,7 @@ Berikut adalah struktur dasar proyek:
 
 ```bash
 Copy
-/dicty-ai
+/Dixy-ai
   /pages              # Halaman utama dan lainnya
     /api              # API endpoint (misalnya, chat dengan AI)
     /aiChat           # Halaman chat dengan AI
@@ -96,7 +94,8 @@ Copy
   /public             # Gambar, logo, dan aset statis lainnya
 ```
 
-**_AI Support Explanation_**
+## AI Support Explanation
+
 Dixy.ai menggunakan model AI canggih yang dilatih untuk memahami konteks dan memberikan respons yang relevan. Berikut adalah beberapa kemampuan utama AI yang digunakan di aplikasi ini:
 
 Generasi Nama Produk: AI dapat menghasilkan nama produk yang kreatif berdasarkan kata kunci atau tema yang diberikan oleh pengguna. Model ini dilatih menggunakan berbagai dataset yang mencakup kata-kata yang populer dan relevansi pasar.
