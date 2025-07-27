@@ -6,6 +6,7 @@ import "../styles/globals.css";
 import Navbar from "@/components/layout/navbar";
 import PageWrapper from "@/components/layout/pageWrapper";
 import { usePathname } from "next/navigation";
+import Footer from "@/components/layout/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
+  const isAiChatPage = pathname === "/pages/aiChat";
   return (
     <html lang="en">
       <body
@@ -35,7 +37,8 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        {pathname !== "/aiChat" && <PageWrapper>{children}</PageWrapper>}
+        {/* {pathname !== "/aiChat" && <PageWrapper>{children}</PageWrapper>} */}
+        {!isAiChatPage && <Footer />}
       </body>
     </html>
   );
