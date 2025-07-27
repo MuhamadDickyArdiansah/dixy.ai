@@ -10,8 +10,6 @@ export default function ProductNameGenerator() {
   const [keywords, setKeywords] = useState<string>("");
   const [generatedNames, setGeneratedNames] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState(null);
-
   const [error, setError] = useState<string | null>(null); // Accepts both string or null
 
   const handleGenerate = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -93,7 +91,7 @@ export default function ProductNameGenerator() {
                 value={keywords}
                 onChange={(e) => setKeywords(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                rows="3"
+                rows={3}
                 placeholder="e.g. Segar, boba, manis, organik, untuk anak"
                 required
               ></textarea>

@@ -1,12 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Dixy.ai - Your AI Writing Assistant
+# dixy.ai - Your AI Writing Assistant
 
-Dixy.ai adalah alat AI berbasis web yang membantu Anda dalam berbagai tugas terkait teks, seperti menghasilkan nama produk, memeriksa keterbacaan teks, dan berinteraksi dengan asisten AI untuk berbagai kebutuhan kreatif dan teknis. Aplikasi ini dibangun menggunakan Next.js dan React, memberikan pengalaman yang cepat dan responsif untuk pengguna.
+dixy.ai adalah alat AI berbasis web yang membantu Anda dalam berbagai tugas terkait teks, seperti menghasilkan nama produk, memeriksa keterbacaan teks, dan berinteraksi dengan asisten AI untuk berbagai kebutuhan kreatif dan teknis. Aplikasi ini dibangun menggunakan Next.js dan React, memberikan pengalaman yang cepat dan responsif untuk pengguna.
 
 ## Deskripsi
 
-Dixy.ai menyederhanakan berbagai tugas yang memerlukan kreativitas dan kejelasan, seperti menghasilkan nama produk, menulis teks, dan memeriksa keterbacaan. Aplikasi ini menggunakan model AI yang canggih untuk memberikan saran dan rekomendasi yang relevan berdasarkan permintaan pengguna. Dengan UI yang ramah pengguna, pengguna dapat berinteraksi langsung dengan asisten AI untuk menyelesaikan berbagai tugas.
+dixy.ai menyederhanakan berbagai tugas yang memerlukan kreativitas dan kejelasan, seperti menghasilkan nama produk, menulis teks, dan memeriksa keterbacaan. Aplikasi ini menggunakan model AI yang canggih untuk memberikan saran dan rekomendasi yang relevan berdasarkan permintaan pengguna. Dengan UI yang ramah pengguna, pengguna dapat berinteraksi langsung dengan asisten AI untuk menyelesaikan berbagai tugas.
 
 ## Teknologi yang Digunakan
 
@@ -42,8 +42,8 @@ Sebelum memulai, pastikan Anda telah menginstal perangkat lunak berikut:
 1. **Clone repositori**:
 
    ```bash
-   git clone https://github.com/username/Dixy-ai.git
-   cd Dixy-ai
+   git clone https://github.com/username/dixy-ai.git
+   cd dixy-ai
    ```
 
 2. **Instal dependensi**:
@@ -83,7 +83,7 @@ Berikut adalah struktur dasar proyek:
 
 ```bash
 Copy
-/Dixy-ai
+/dixy-ai
   /pages              # Halaman utama dan lainnya
     /api              # API endpoint (misalnya, chat dengan AI)
     /aiChat           # Halaman chat dengan AI
@@ -96,7 +96,7 @@ Copy
 
 ## AI Support Explanation
 
-Dixy.ai menggunakan model AI canggih yang dilatih untuk memahami konteks dan memberikan respons yang relevan. Berikut adalah beberapa kemampuan utama AI yang digunakan di aplikasi ini:
+dixy.ai menggunakan model AI canggih yang dilatih untuk memahami konteks dan memberikan respons yang relevan. Berikut adalah beberapa kemampuan utama AI yang digunakan di aplikasi ini:
 
 Generasi Nama Produk: AI dapat menghasilkan nama produk yang kreatif berdasarkan kata kunci atau tema yang diberikan oleh pengguna. Model ini dilatih menggunakan berbagai dataset yang mencakup kata-kata yang populer dan relevansi pasar.
 

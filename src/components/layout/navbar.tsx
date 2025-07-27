@@ -81,7 +81,7 @@ export default function Navbar() {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <h1 className="text-slate-900 text-2xl font-bold font-sans">
-              Dixy.ai
+              dixy.ai
             </h1>
           </Link>
         </div>
