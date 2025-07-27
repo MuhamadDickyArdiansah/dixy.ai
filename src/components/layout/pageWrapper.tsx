@@ -5,7 +5,11 @@
 import { usePathname } from "next/navigation"; // Gunakan hook ini, bukan useRouter
 import Footer from "./footer";
 
-export default function PageWrapper({ children }) {
+interface PageWrapperProps {
+  children: React.ReactNode; // Ensure children is properly typed
+}
+
+export default function PageWrapper({ children }: PageWrapperProps) {
   const pathname = usePathname(); // Hook untuk mendapatkan path URL saat ini
   const isAiChatPage = pathname === "/pages/aiChat";
 

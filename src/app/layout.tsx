@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import Navbar from "@/components/layout/navbar";
-import Footer from "@/components/layout/footer";
 import PageWrapper from "@/components/layout/pageWrapper";
+import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dicty.ai - Your AI Writing Assistant",
+  title: "Dixy.ai - Your AI Writing Assistant",
   description: "Tools to generate product names and check readability.",
 };
 
@@ -25,6 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
   return (
     <html lang="en">
       <body
@@ -32,7 +33,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <PageWrapper />
+        {pathname !== "/aiChat" && <PageWrapper>{children}</PageWrapper>}
       </body>
     </html>
   );
